@@ -7,9 +7,10 @@ import asyncio
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from telegram.ext import MessageHandler, filters
+import os
 
-BOT_TOKEN = "8724197971:AAGenpCFn8wAXpv0NuSoCxxwbuBCsnEqb4I"
-GEMINI_API_KEY = "AIzaSyCipufnHqUTIfR6iALXyBVtTgsb2DMs1sU"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
