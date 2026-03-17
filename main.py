@@ -109,7 +109,7 @@ def download_earth_image(lat, lon):
         r = requests.get(NASA_GIBS_WMS, params=params, timeout=10)
         img = Image.open(BytesIO(r.content)).convert("RGB")
 
-    filename = "iss_view.png"
+    filename = f"iss_{lat}_{lon}.png"
     img.save(filename)
     return filename
 
